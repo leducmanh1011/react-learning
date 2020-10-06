@@ -7,22 +7,16 @@ import TodoItem from './components/TodoItem'
 import ContactCard from './components/ContactCard';
 import Joke from './components/Joke';
 import jokesData from './components/JokesData';
+import todosData from './components/todosData';
 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findindex
+
 
 function App() {
-  const jokeComponents = jokesData.map(joke => <Joke key={joke.id} question={joke.question} punchLine={joke.punchLine} />)
+  const todoItems = todosData.map(item => <TodoItem item={item} />)
 
   return (
-    <div>
-      {jokeComponents}
+    <div className="todo-list">
+        {todoItems}
     </div>
   );
 }
