@@ -11,14 +11,23 @@ import todosData from './components/todosData';
 
 
 
-function App() {
-  const todoItems = todosData.map(item => <TodoItem item={item} />)
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      todos: todosData
+    }
+  }
 
-  return (
-    <div className="todo-list">
-        {todoItems}
-    </div>
-  );
+  render () {
+    const todoItems = this.state.todos.map(item => <TodoItem item={item} />)
+
+    return (
+      <div className="todo-list">
+          {todoItems}
+      </div>
+    );
+  }
 }
 
 export default App;
