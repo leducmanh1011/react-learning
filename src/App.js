@@ -9,13 +9,17 @@ import Joke from './components/Joke';
 import jokesData from './components/JokesData';
 import todosData from './components/todosData';
 import Form from './components/FormContainer';
+import MemeGenerator from './components/MemeGenerator';
 
 
 
 class App extends React.Component {
   render () {
     return (
-      <Form />
+      <div className="container">
+        <Header />
+        <MemeGenerator />
+      </div>
     );
   }
 }
